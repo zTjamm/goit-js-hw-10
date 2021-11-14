@@ -1,0 +1,10 @@
+{{#each name}}
+<p class='text'>Столица: {{capital}}</p>
+<p class='text'>Население: {{population}}</p>
+<p class='text'>Официальный язык:
+  
+  {{#each languages}}
+    <span>{{this}}</span>
+  {{/each}}
+</p>
+{{/each}}
