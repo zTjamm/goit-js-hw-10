@@ -19,13 +19,15 @@ function onInput() {
     API.fetchCountries(name).then(render).catch(onError);          
 }
 function  render(name) {
-     countryList.innerHTML = countryFlags({name})
-     if(country.length >10){
+     countryList.innerHTML = countryFlags({name});
+     if(name.length > 10){         
          Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
          cleaning();
-     }else if(country.length===1){
+     }
+     if(name.length === 1){
         countryInfo.innerHTML = countryLst({name});
-        document.querySelector('.country-item').style.fontSize = '15px';
+        document.querySelector('.country-item').style.fontSize = '10px';
+        document.querySelector('.text').style.marginLeft = '15px';
      }else{
          countryInfo.innerHTML='';
      }    
